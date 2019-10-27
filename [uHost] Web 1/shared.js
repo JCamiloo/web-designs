@@ -2,18 +2,29 @@ const backdrop = document.querySelector('.backdrop');
 const modal = document.querySelector('.modal');
 const planButtons = document.querySelectorAll('.plan button');
 const noButton = document.querySelector(".modal__action--negative");
+const toggleButton = document.querySelector('.toggle-button');
+const mobileNav = document.querySelector('.mobile-nav');
 
 for(button of planButtons) {
     button.addEventListener('click', function() {
-        modal.style.display = 'block';
-        backdrop.style.display = 'block';
+        modal.classList.add('open');
+        backdrop.classList.add('open');
     });
 }
 
-backdrop.addEventListener("click", closeModal);
-noButton.addEventListener("click", closeModal);
+backdrop.addEventListener("click", function() {
+    mobileNav.classList.remove('open');
+    closeModal();
+});
+
+noButton && noButton.addEventListener("click", closeModal);
 
 function closeModal() {
-    backdrop.style.display = "none";
-    modal.style.display = "none";
+    modal && modal.classList.remove('open');
+    backdrop.classList.remove('open');
 }
+
+toggleButton.addEventListener('click', function() {
+    mobileNav.classList.add('open');
+    backdrop.classList.add('open');
+});
