@@ -38,11 +38,6 @@ main {
     font: inherit;
 }
 
-.signup-form input[type="checkbox"]:checked {
-    background: #2DDF5C;
-    border: #0E4F1F;
-}
-
 .signup-form input:focus,
 .signup-form select:focus {
     outline: none;
@@ -58,6 +53,18 @@ main {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
+}
+
+.signup-form input[type="checkbox"]:checked {
+    background: #2DDF5C;
+    border: #0E4F1F;
+}
+
+.signup-form input.invalid,
+.signup-form select.invalid,
+.signup-form :invalid {
+    border-color: red !important;
+    background: #FAACAC;
 }
 
 .signup-form button[type="submit"] {
