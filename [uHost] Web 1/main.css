@@ -4,7 +4,6 @@
         #ff1b68;
     background-position: 20%;
     max-width: 100%;
-    width: 100vw;
     height: calc(100vh - 2.5rem);
     position: relative;
 }
